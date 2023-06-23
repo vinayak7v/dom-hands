@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Q1.Write the code to access element which is having id as "text"</h3>
+    <p id="text"> O/P:- Some Text</p> 
+    <pre class="answer"> Ans:- let id = document.getElementById('text')
+        console.log(id.innerText);
+        </pre>
+    <hr>
+
+    
+    <h3>Q2.Write the code to access element which is having tag as"h1"</h3>
+    <h1>hello</h1>
+     <pre class="answer">Ans:- const h1Val = document.getElementsByTagName('h1');
+        console.log(h1Val[0].innerText);</pre>
+    <hr>
+
+    <h3>Q3.Write the code to access element which is having class as "box"</h3>
+    <p class="box">DOM Project</p>
+    <p class="box">DOM Project</p>
+    <p class="box">DOM Project</p>
+    <p class="box">DOM Project</p>
+    <p class="box">DOM Project</p>
+    <pre class="answer">Ans:- const element = document.getElementByClassName("box")
+        element[0].innerHTML
+    </pre>
+    <hr>
+
+
+    <h3>Q4:- "Hello"  Change the heading from ""Hello"" to ""Hello World"" using DOM functions"</h3>
+    <h4>Hello</h4>
+    <pre class="answer">Ans:-let text = document.querySelector('h4')
+       text.addEventListener('click' , () =>(
+          text.innerText = 'Hello World'
+      )
+      );</pre>
+      <hr>
+
+      <h3>Q5:-Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</h3>
+      <h5>Hello World</h5>
+      <button onclick="changeText()"  class="btn">Replaced Text</button>
+       <pre class="answer">Ans:-function changeText(){
+           let text = document.querySelector('h5')
+           text.innerText = 'Welcome to elevation academy'
+         };</pre>
+         <hr>
+
+       <h3>Q6:-"Hello"Add one style attribute and give text color as red and id attribute and give the id value as ""heading"" in the above given h1 tag using DOM functions"</h3>
+       <h2>Hello</h2>
+       <pre class="answer">Ans:- let change = document.querySelector('h2')
+           change.addEventListener('click' ,function (){ 
+           change.innerText = 'Welcome to elevation academy'
+           change.style.color = "red"
+       })
+       </pre>
+       <hr>
+
+       
+
+       <h2>Q7:-Create three cards on HTML page and arrange them using flex property in row or horizontal direction and also create button at the bottom named "Change Flex direction". When user clicks on this button, the cards arrangement should be changed to vertical direction.</h2>
+       <div class="parentCard">
+           <div class="child-card"></div>
+           <div class="child-card"></div>
+           <div class="child-card"></div>
+           <div class="child-card"></div>
+       </div> <br>
+       <button onclick="direction()" class="btn">Change Flex Direction </button>
+       <pre class="answer">Ans:- function direction() {
+           let changeDimension = document.getElementsByClassName('parentCard');
+           changeDimension[0].style.flexDirection = 'column'
+         }</pre>
+       <hr>
+
+
+       <h3>Q8:-What’s the difference between window vs document?</h3>
+    <p><strong>Window</strong></p>
+<ul type="disc">
+   <li>It represents the document loaded inside the window or browser.</li>
+   <li>The properties related to it are stored in the document object.</li>
+   <li>It is loaded after the loading window because the window contains a document.</li>
+   <li>It is the root element of the document object model.</li>
+   <li>It is an object of the window.</li>
+   <li>We can not access windows objects properties inside the document.</li>
+</ul>
+    <br>
+      <p><strong>Document</strong></p>
+ <ul type="disc">
+   <li>It represents the browser window in which you are seeing the content.</li>
+   <li>The properties related to it are stored in the window object.
+
+   </li>
+   <li>It is loaded before the document because of the window container document.</li>
+   <li>It is an object of the browser.</li>
+   <li>We can access document object properties inside the window.</li>
+   <hr>
+     </ul>
+     <h3>Q9:- Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</h3>
+       
+     <div class="container digital" id="time">
+    </div>
+     <br>
+     <pre class="answer">Ans:-
+  
+           setInterval(myFunction, 1000); 
+           function myFunction() {
+
+           var DateObj = new Date();
+           var hour = DateObj.getHours();
+           var minute = DateObj.getMinutes();
+           var seconds = DateObj.getSeconds();
+
+           if (hour >= 12) {
+           hour = hour - 12;
+           }
+
+           if (hour < 10) {
+           hour = "0" + hour;
+           }
+
+           if (minute < 10) {
+           minute = "0" + minute;
+           }
+
+           if (seconds < 10) {
+           seconds = "0" + seconds;
+           }
+
+           document.getElementById("time").innerText = `${hour} : ${minute} :${seconds}`;
+
+         }</pre>
+         <hr>
+
+   <h3>Q10:-Guess the number game.</h3>
+   <a href="./index1.html">Play Game</a>
+ 
+
+</body>
+<script src="./myscript.js"></script>
+</html>
